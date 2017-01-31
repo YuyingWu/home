@@ -10,26 +10,58 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="modules/css/index.less">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.less">
 
-        <!--link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <script src="lib/html5-shim.js"></script>
+
+        <!--link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script-->
     </head>
-    <body>
+    <body class="body">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <img src="http://cdn.sinacloud.net/woodysblog/2016/me.JPG" alt="Cook's Beach in NZ">
+        <section class="wgt-gallery">
+            <img id="background" class="background" src="http://cdn.sinacloud.net/woodysblog/2016/me.JPG" alt="Cook's Beach in NZ">
+        </section>
+
+        <aside class="wgt-personal-desc" id="wgt-personal-desc">
+            <div class="clear container">
+                <section class="grid-r">
+                    <h1 class="title">伍酱</h1>
+                    <h2 class="sub-title">不爱鸡翅的摄影师不是好的前端开发攻城狮</h2>
+
+                    <ul>
+                        <li>
+                            <a href="/">博客</a>
+                        </li>
+                        <li>
+                            <a href="/">Github</a>
+                        </li>
+                        <li>
+                            <a href="/">微博</a>
+                        </li>
+                        <li>
+                            <a href="/">Instagram</a>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section class="grid">
+                    <div class="avatar"></div>
+                    <div class="sign"></div>
+                </section>
+            </div>
+        </aside>
+
+        <div class="btn-menu" id="btn-menu">=</div>
 
         <script src="lib/mod.js"></script>
-        <script src="modules/js/index.es"></script>
-
-        <!--script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script-->
+        <script>
+            require.async('modules/main/main.es');
+        </script>
     </body>
 </html>
