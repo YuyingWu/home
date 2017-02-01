@@ -3,17 +3,19 @@ require('lib/zepto');
 const WINDOW = $(window);
 
 var renewStyle = function(){
-	let [Height, background, wgtContainer] = [WINDOW.height(), $('#background'), $('#wgt-personal-desc .container')];
+	let [winWidth, winHeight] = [WINDOW.width(), WINDOW.height()];
+
+	// 个人简介
+	let wgtContainer = $('#wgt-personal-desc .container');
 	let personalDescHeight = wgtContainer.height();
 
-	background.css({
-		height: Height
-	})
-	// 防止图片显示时，尺寸调整造成的抖动
-	.addClass('show');
-
 	wgtContainer.css({
-		'margin-top': (Height - personalDescHeight) / 2
+		'margin-top': (winHeight - personalDescHeight) / 2
+	});
+
+	$('body').css({
+		height: winHeight,
+		width: winWidth
 	});
 };
 
@@ -32,6 +34,7 @@ var eventHandler = function(){
 }
 
 $(function(){
+	$('#background').addClass('show');
 	renewStyle();
 	eventHandler();
 });
